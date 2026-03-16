@@ -129,7 +129,6 @@ unlinked_spec.ds
 **/*.pem
 
 # IDE and editor
-.vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
