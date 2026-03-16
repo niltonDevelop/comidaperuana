@@ -11,14 +11,14 @@ class FirebaseConfig {
     if (kDebugMode) {
       // En desarrollo, usar debug provider
       await FirebaseAppCheck.instance.activate(
-        androidProvider: AndroidProvider.debug,
-        appleProvider: AppleProvider.debug,
+        providerAndroid: const AndroidDebugProvider(),
+        providerApple: const AppleDebugProvider(),
       );
     } else {
       // En producción, usar providers reales
       await FirebaseAppCheck.instance.activate(
-        androidProvider: AndroidProvider.playIntegrity,
-        appleProvider: AppleProvider.appAttest,
+        providerAndroid: const AndroidPlayIntegrityProvider(),
+        providerApple: const AppleAppAttestProvider(),
       );
     }
   }

@@ -53,6 +53,7 @@ Vertex AI requiere **facturación habilitada** en tu proyecto de Google Cloud. E
    |-------|-------|-------------|
    | `use_vertex_ai` | `true` | Habilita Vertex AI (cambiar de "false" a "true") |
    | `vertex_location` | `us-central1` | Región de Vertex AI (puede ser: us-central1, us-east1, europe-west1, etc.) |
+   | `model_name` | `gemini-2.0-flash-001` | Modelo de Gemini para Vertex AI (usa versión explícita) |
 
 4. **Publica los cambios:**
    - Haz clic en **Publicar cambios**
@@ -130,6 +131,18 @@ await configService.initialize();
 1. Verifica facturación: https://console.cloud.google.com/billing?project=recetas-6a516
 2. Verifica API habilitada: https://console.cloud.google.com/apis/library/aiplatform.googleapis.com?project=recetas-6a516
 3. Espera 10 minutos y vuelve a intentar
+
+### Error: "Publisher Model ... was not found or your project does not have access to it"
+
+**Causas posibles:**
+1. Facturación no habilitada en Google Cloud
+2. Vertex AI API no habilitada
+3. Nombre del modelo incorrecto (usar `gemini-2.0-flash-001` en lugar de `gemini-2.0-flash`)
+
+**Solución:**
+1. Habilita facturación: https://console.cloud.google.com/billing?project=TU_PROYECTO
+2. Habilita Vertex AI API: https://console.cloud.google.com/apis/library/aiplatform.googleapis.com
+3. En Remote Config, usa `model_name`: `gemini-2.0-flash-001` (versión explícita recomendada)
 
 ### Error: "Location not found" o "Invalid location"
 
