@@ -13,28 +13,22 @@
             "name": "comidaperuana (dev)",
             "request": "launch",
             "type": "dart",
-            "args": [
-                "--flavor", "dev",
-                "-t", "lib/main_dev.dart"
-            ]
+            "program": "lib/main_dev.dart",
+            "toolArgs": ["--flavor", "dev"]
         },
         {
             "name": "comidaperuana (staging)",
             "request": "launch",
             "type": "dart",
-            "args": [
-                "--flavor", "staging",
-                "-t", "lib/main_staging.dart"
-            ]
+            "program": "lib/main_staging.dart",
+            "toolArgs": ["--flavor", "staging"]
         },
         {
             "name": "comidaperuana (prod)",
             "request": "launch",
             "type": "dart",
-            "args": [
-                "--flavor", "prod",
-                "-t", "lib/main_prod.dart"
-            ]
+            "program": "lib/main_prod.dart",
+            "toolArgs": ["--flavor", "prod"]
         },
         {
             "name": "comidaperuana (profile mode)",
